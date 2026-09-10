@@ -7,76 +7,335 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .index-wrap{
-    position:relative;
-    z-index:1;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:60px 32px;
-  }
-  .index-head{max-width:640px; margin:0 auto 48px; text-align:center;}
-  .index-head .eyebrow{justify-content:center; display:flex;}
-  .index-head h1{font-size:clamp(30px,4.4vw,46px); margin-top:14px; line-height:1.12;}
-  .index-cards{
-    max-width:900px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:24px;
-  }
-  @media(max-width:700px){ .index-cards{grid-template-columns:1fr;} }
-  .index-card{
-    display:block;
-    border:1px solid var(--ink);
-    background:var(--white);
-    padding:32px 28px;
-    opacity:1;
-    filter:none;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .index-card:hover{transform:translateY(-3px); box-shadow:4px 4px 0 var(--ink);}
-  .index-card .sheet-no{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); letter-spacing:.08em;}
-  .index-card h2{font-size:24px; margin:10px 0 10px;}
-  .index-card p{color:var(--ink-soft); font-size:14px; margin-bottom:18px;}
-  .index-card .enter{
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.06em;
-    text-transform:uppercase; color:var(--ink);
-    display:flex; align-items:center; gap:6px;
-  }
-  .index-card.eng .enter{color:#2E4756;}
-  .index-card.viz .enter{color:#C4671F;}
-  .index-card .enter::after{content:"→"; transition:transform .15s ease;}
-  .index-card:hover .enter::after{transform:translateX(4px);}
-  .index-footer{
-    max-width:900px; margin:44px auto 0; text-align:center;
-    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); letter-spacing:.05em;
-  }
-</style>
 </head>
 <body>
 
-<div class="index-wrap">
-  <div class="index-head">
-    <span class="eyebrow">Portfolio</span>
-    <h1>Sofia Calderon</h1>
+<header class="titleblock">
+  <div class="titleblock-inner">
+    <div class="tb-cell tb-name">
+      <span class="label">Name</span>
+      <span class="value">Sofia Calderon</span>
+    </div>
+    <div class="tb-cell">
+      <span class="label">Discipline</span>
+      <span class="value">CAD / Mechanical Design</span>
+    </div>
+    <div class="tb-cell">
+      <span class="label">Dwg No. — Rev</span>
+      <span class="value">PORTFOLIO — REV D</span>
+    </div>
+    <nav class="tb-nav">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
+</header>
 
-  <div class="index-cards">
-    <a class="index-card eng" href="portfolio-engineering.html">
-      <span class="sheet-no">SHEET 01</span>
-      <h2>Engineering</h2>
-      <p>CAD, systems design, and technical asset preparation for lab equipment and VR training workflows.</p>
-      <span class="enter">Enter</span>
-    </a>
-    <a class="index-card viz" href="portfolio-visualization.html">
-      <span class="sheet-no">SHEET 02</span>
-      <h2>Visualization</h2>
-      <p>Model preparation, materials, lighting, and scene setup for real-time visualization and simulation.</p>
-      <span class="enter">Enter</span>
-    </a>
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Portfolio — Sheet 01</p>
+        <h1>Lab instruments,<br>built for a<br><span class="accent">VR-ready</span> pipeline.</h1>
+        <p class="lede">Mechatronics engineer designing lab machines and instruments in SolidWorks, prepped through Maya and Substance Painter, and deployed as interactive VR training environments in Unreal Engine 4.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <span class="tick tl">FIG. 01</span>
+        <div class="viewer-box" id="viewer-hero">
+          <span class="viewer-status">Loading model…</span>
+        </div>
+        <span class="tick br">DRAG TO ROTATE</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section id="pipeline" class="wrap">
+    <div class="sec-head">
+      <h2>Design Pipeline</h2>
+    </div>
+    <p class="pipeline-intro">Movable parts are decided in SolidWorks, not bolted on later — every stage after that just carries that decision forward.</p>
+    <div class="pipeline">
+      <div class="pipeline-node">
+        <span class="stage">Stage 01</span>
+        <span class="tool">SolidWorks</span>
+        <span class="desc">Movable parts isolated and exported as STL.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 02</span>
+        <span class="tool">Maya</span>
+        <span class="desc">Parts prepped and optimized for UE4.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 03</span>
+        <span class="tool">Substance Painter</span>
+        <span class="desc">FBX from Maya, painted with PBR materials.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 04</span>
+        <span class="tool">Unreal / VR</span>
+        <span class="desc">Assembled, wired, and deployed for VR.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="wrap">
+    <div class="sec-head">
+      <h2>Selected Projects</h2>
+    </div>
+
+    <!-- PROJECT SHEET 01 -->
+    <article class="sheet reveal">
+      <div class="sheet-head">
+        <span class="sheet-no">DWG NO. PRJ-01 — Compact Ripple Tank</span>
+        <span class="sheet-status">Deployed</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-media">
+          <div class="media-slot">Full assembly, isometric view<br>[SolidWorks screenshot]</div>
+          <div class="media-caption">FIG. 01 — Assembly, 7 solid bodies</div>
+        </div>
+        <div class="sheet-content">
+          <h3>Compact Ripple Tank</h3>
+          <p class="role">Design → VR asset</p>
+          <p><strong>Problem.</strong> Instrument housing with a control panel and wave-generating mechanism, with a lid that needed to move independently in VR.</p>
+          <p><strong>Built.</strong> Modeled as 7 solid bodies in SolidWorks, lid exported separately as STL, prepped in Maya, painted in Substance Painter, and assembled/lit in Unreal for VR.</p>
+          <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Maya</span>
+            <span class="tag">Substance Painter</span>
+            <span class="tag">Unreal / VR</span>
+          </div>
+          <table class="rev">
+            <caption>Iteration log</caption>
+            <thead><tr><th>Rev</th><th>Change</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>Single-body concept</td><td class="result">Lid couldn't separate for export</td></tr>
+              <tr><td>B</td><td>Split into 7 bodies, renamed for pipeline</td><td class="result">Clean hierarchy, addressable in engine</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT SHEET 02 -->
+    <article class="sheet reveal">
+      <div class="sheet-head">
+        <span class="sheet-no">DWG NO. PRJ-02 — Basic System &amp; Photogates System</span>
+        <span class="sheet-status">Deployed</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-media">
+          <div class="media-slot"><img src="assets/basic-photogates-system/01-solidworks-exploded.png" alt="SolidWorks exploded view of the track, cart, pulley and photogate assembly"></div>
+          <div class="media-caption">FIG. 01 — Exploded assembly, 22 solid bodies</div>
+          <div class="media-slot"><img src="assets/basic-photogates-system/03-unreal-scene.png" alt="Lit scene in Unreal Engine 4 with all track components placed for VR"></div>
+          <div class="media-caption">FIG. 02 — Lit in Unreal, parts placed for VR interaction</div>
+        </div>
+        <div class="sheet-content">
+          <h3>Basic System &amp; Photogates System</h3>
+          <p class="role">Design → VR asset</p>
+          <p><strong>Problem.</strong> A physics track for kinematics/dynamics experiments — students reposition the photogates, end stops, and pulley for each run; the VR version needed that same freedom.</p>
+          <p><strong>Built.</strong> Modeled as a 22-body assembly — track, cart, pulley, photogate, fence, rod, elastic bumper, and end stop all kept independent, exported as STL, prepped in Maya, painted in Substance Painter, and staged in Unreal as separately placeable parts.</p>
+          <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Maya</span>
+            <span class="tag">Substance Painter</span>
+            <span class="tag">Unreal / VR</span>
+          </div>
+          <table class="rev">
+            <caption>Iteration log</caption>
+            <thead><tr><th>Rev</th><th>Change</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>[Fill in]</td><td class="result">[Fill in]</td></tr>
+              <tr><td>B</td><td>[Fill in]</td><td class="result">[Fill in]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT SHEET 03 — placeholder, awaiting details -->
+    <article class="sheet reveal">
+      <div class="sheet-head">
+        <span class="sheet-no">DWG NO. PRJ-03 — [Project Name]</span>
+        <span class="sheet-status">In Review</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-media">
+          <div class="media-slot">Assembly / mechanism view<br>[image]</div>
+          <div class="media-caption">FIG. 01 — [caption]</div>
+        </div>
+        <div class="sheet-content">
+          <h3>[Project Name]</h3>
+          <p class="role">Design → VR asset</p>
+          <p><strong>Problem.</strong> [What the instrument does and what needed to move.]</p>
+          <p><strong>Built.</strong> [Modeling + pipeline summary, one or two sentences.]</p>
+          <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Maya</span>
+            <span class="tag">Substance Painter</span>
+            <span class="tag">Unreal / VR</span>
+          </div>
+          <table class="rev">
+            <caption>Iteration log</caption>
+            <thead><tr><th>Rev</th><th>Change</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>[Change]</td><td class="result">[Result]</td></tr>
+              <tr><td>B</td><td>[Change]</td><td class="result">[Result]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- CONTACT / SIGN-OFF -->
+  <section id="contact" class="wrap">
+    <div class="dim-rule"><span>Sign-off</span></div>
+    <div class="signoff">
+      <div class="signoff-grid">
+        <div>
+          <h2>Let's build something that has to fit, move, and hold up.</h2>
+          <p>Open to CAD, mechanical design, and VR asset pipeline roles.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:your.email@example.com">Email me</a>
+            <a class="btn ghost" href="[LinkedIn URL]">LinkedIn</a>
+          </div>
+        </div>
+        <table class="approval-table">
+          <tr><td class="k">Location</td><td>[City, Country / Remote]</td></tr>
+          <tr><td class="k">Email</td><td><a href="mailto:your.email@example.com">your.email@example.com</a></td></tr>
+          <tr><td class="k">LinkedIn</td><td><a href="#">linkedin.com/in/[you]</a></td></tr>
+          <tr><td class="k">Résumé</td><td><a href="#">Download PDF</a></td></tr>
+          <tr><td class="k">Status</td><td>Open to opportunities</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 SOFIA CALDERON — PORTFOLIO</span>
+    <span>REV D — SHEET 01 OF 01</span>
   </div>
+</footer>
 
-</div>
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  items.forEach(el => io.observe(el));
+</script>
+
+<!-- 3D STL VIEWER (Three.js) -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+
+  function initSTLViewer({ containerId, stlPath, accentColor }) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const statusEl = container.querySelector('.viewer-status');
+
+    const width = container.clientWidth || 400;
+    const height = container.clientHeight || 300;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 5000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(width, height);
+    container.appendChild(renderer.domElement);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    const key = new THREE.DirectionalLight(0xffffff, 1.1);
+    key.position.set(1, 1.4, 1);
+    scene.add(key);
+    const fill = new THREE.DirectionalLight(0xffffff, 0.35);
+    fill.position.set(-1, -0.4, -1);
+    scene.add(fill);
+
+    const loader = new STLLoader();
+    loader.load(
+      stlPath,
+      (geometry) => {
+        geometry.center();
+        geometry.computeVertexNormals();
+        geometry.computeBoundingBox();
+
+        const size = new THREE.Vector3();
+        geometry.boundingBox.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z) || 1;
+        const scale = 2.2 / maxDim;
+
+        const material = new THREE.MeshStandardMaterial({
+          color: accentColor || 0x2e4756,
+          metalness: 0.15,
+          roughness: 0.55
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.scale.setScalar(scale);
+        scene.add(mesh);
+
+        camera.position.set(2.6, 2.0, 2.6);
+        controls.target.set(0, 0, 0);
+        controls.update();
+
+        if (statusEl) statusEl.style.display = 'none';
+      },
+      undefined,
+      (err) => {
+        if (statusEl) statusEl.textContent = 'Model not found — check the file path.';
+        console.error('STL load error:', err);
+      }
+    );
+
+    (function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    })();
+
+    window.addEventListener('resize', () => {
+      const w = container.clientWidth, h = container.clientHeight;
+      if (!w || !h) return;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    });
+  }
+
+  // Featured model in the hero — replace with your own .stl path
+  initSTLViewer({
+    containerId: 'viewer-hero',
+    stlPath: 'assets/models/featured-model.stl',
+    accentColor: 0x2e4756
+  });
+</script>
 
 </body>
 </html>
