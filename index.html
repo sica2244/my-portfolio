@@ -1,136 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sofia | Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio website for Sofia, a creative developer and designer."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav">
-        <div class="brand">Sofia</div>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Name] — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .index-wrap{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:60px 32px;
+  }
+  .index-head{max-width:640px; margin:0 auto 48px; text-align:center;}
+  .index-head .eyebrow{justify-content:center; display:flex;}
+  .index-head h1{font-size:clamp(30px,4.4vw,46px); margin-top:14px; line-height:1.12;}
+  .index-cards{
+    max-width:900px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1fr; gap:24px;
+  }
+  @media(max-width:700px){ .index-cards{grid-template-columns:1fr;} }
+  .index-card{
+    display:block;
+    border:1px solid var(--ink);
+    background:var(--white);
+    padding:32px 28px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .index-card:hover{transform:translateY(-3px); box-shadow:4px 4px 0 var(--ink);}
+  .index-card .sheet-no{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); letter-spacing:.08em;}
+  .index-card h2{font-size:24px; margin:10px 0 10px;}
+  .index-card p{color:var(--ink-soft); font-size:14px; margin-bottom:18px;}
+  .index-card .enter{
+    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color:var(--ink);
+    display:flex; align-items:center; gap:6px;
+  }
+  .index-card.eng .enter{color:#2E4756;}
+  .index-card.viz .enter{color:#C4671F;}
+  .index-card .enter::after{content:"→"; transition:transform .15s ease;}
+  .index-card:hover .enter::after{transform:translateX(4px);}
+  .index-footer{
+    max-width:900px; margin:44px auto 0; text-align:center;
+    font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); letter-spacing:.05em;
+  }
+</style>
+</head>
+<body>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-content">
-          <div class="hero-copy">
-            <p class="eyebrow">Hello, I’m Sofia</p>
-            <h1>Building thoughtful digital experiences.</h1>
-            <p class="lead">
-              I’m a frontend developer and designer focused on creating clean,
-              modern, and user-friendly websites.
-            </p>
-            <div class="hero-actions">
-              <a class="button primary" href="#projects">View Projects</a>
-              <a class="button secondary" href="#contact">Contact Me</a>
-            </div>
-          </div>
-          <div class="hero-card" aria-label="Profile summary card">
-            <div class="avatar">S</div>
-            <h2>Available for freelance work</h2>
-            <ul>
-              <li>Web Design</li>
-              <li>Frontend Development</li>
-              <li>Responsive UI</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<div class="index-wrap">
+  <div class="index-head">
+    <span class="eyebrow">Sheet Index</span>
+    <h1>[Your Name] — Portfolio</h1>
+  </div>
 
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>Designing with clarity and purpose.</h2>
-          </div>
-          <div class="about-grid">
-            <p>
-              I enjoy turning ideas into polished experiences that are easy to
-              use and visually engaging. My process combines strategy, design,
-              and clean front-end implementation.
-            </p>
-            <p>
-              Whether I’m creating a landing page, a portfolio, or a product
-              interface, I focus on details that make the experience feel smooth,
-              intentional, and memorable.
-            </p>
-          </div>
-        </div>
-      </section>
+  <div class="index-cards">
+    <a class="index-card eng" href="portfolio-engineering.html">
+      <span class="sheet-no">SHEET 01</span>
+      <h2>Engineering</h2>
+      <p>Parametric CAD, multi-body assemblies, and export pipelines — for CAD / mechanical design roles.</p>
+      <span class="enter">Enter</span>
+    </a>
+    <a class="index-card viz" href="portfolio-visualization.html">
+      <span class="sheet-no">SHEET 02</span>
+      <h2>Visualization</h2>
+      <p>Materials, lighting, and real-time scenes built in Unreal Engine for VR — for 3D art / visualization roles.</p>
+      <span class="enter">Enter</span>
+    </a>
+  </div>
 
-      <section id="projects" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Projects</p>
-            <h2>Selected work.</h2>
-          </div>
+  <div class="index-footer">DWG SET — 2 SHEETS — REV C</div>
+</div>
 
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-image img-one"></div>
-              <div class="project-content">
-                <h3>Brand Studio</h3>
-                <p>
-                  A branding showcase for a creative agency focused on visual
-                  identity and storytelling.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-image img-two"></div>
-              <div class="project-content">
-                <h3>Product Landing Page</h3>
-                <p>
-                  A conversion-focused landing page with clean messaging and a
-                  strong visual hierarchy.
-                </p>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-image img-three"></div>
-              <div class="project-content">
-                <h3>Portfolio Redesign</h3>
-                <p>
-                  A modern portfolio concept that elevates content and improves
-                  readability across devices.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer id="contact" class="site-footer">
-      <div class="container footer-content">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s build something meaningful.</h2>
-        </div>
-        <a class="button primary" href="mailto:hello@yourportfolio.com">
-          hello@yourportfolio.com
-        </a>
-      </div>
-    </footer>
-  </body>
+</body>
 </html>
