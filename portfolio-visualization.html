@@ -72,27 +72,27 @@
       <h2>Visualization Pipeline</h2>
       <span class="sheet-tag">STAGES 02–04 — LOOK DEV TO VR</span>
     </div>
-    <p class="pipeline-intro">Every scene here starts as engineering-accurate CAD, not a free-form model — the job is turning precise, correctly-scaled geometry into something that reads as real and responds correctly once someone is standing next to it in a headset.</p>
+    <p class="pipeline-intro">Engineering-accurate CAD, turned into something that reads as real once someone is standing next to it in a headset.</p>
     <div class="pipeline">
       <div class="pipeline-node">
         <span class="stage">Stage 01</span>
         <span class="tool">SolidWorks</span>
-        <span class="desc">Source geometry: instrument housing, mechanism, and control panel, modeled with movable parts kept separate.</span>
+        <span class="desc">Movable parts isolated and exported as STL.</span>
       </div>
       <div class="pipeline-node primary">
         <span class="stage">Stage 02</span>
         <span class="tool">Maya</span>
-        <span class="desc">Retopology and UV layout tuned for texel density and readability up close in VR, where flaws are far more visible than on a screen.</span>
+        <span class="desc">Parts prepped and optimized for UE4.</span>
       </div>
       <div class="pipeline-node primary">
         <span class="stage">Stage 03</span>
-        <span class="tool">PBR Texturing</span>
-        <span class="desc">Full BaseColor / Metallic / Normal / Roughness sets per part, built to sell material identity — metal, plastic, worn edges — under real-time lighting.</span>
+        <span class="tool">Substance Painter</span>
+        <span class="desc">FBX from Maya, painted with PBR materials.</span>
       </div>
       <div class="pipeline-node primary">
         <span class="stage">Stage 04</span>
         <span class="tool">Unreal / VR</span>
-        <span class="desc">Scene lighting, interaction wiring for movable parts, and optimization for stable framerate inside a VR headset.</span>
+        <span class="desc">Lit, wired, and optimized for VR.</span>
       </div>
     </div>
   </section>

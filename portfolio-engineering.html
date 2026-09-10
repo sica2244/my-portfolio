@@ -72,27 +72,27 @@
       <h2>Design Pipeline</h2>
       <span class="sheet-tag">STAGE 01 — DESIGN OF RECORD</span>
     </div>
-    <p class="pipeline-intro">Every instrument in this portfolio is designed with its destination in mind: a VR training environment. That means the SolidWorks stage isn't just geometry — it's where part hierarchy, naming, and separations for moving components get decided, so nothing has to be rebuilt downstream.</p>
+    <p class="pipeline-intro">Movable parts are decided in SolidWorks, not bolted on later — every stage after that just carries that decision forward.</p>
     <div class="pipeline">
       <div class="pipeline-node primary">
         <span class="stage">Stage 01</span>
         <span class="tool">SolidWorks</span>
-        <span class="desc">Parametric design of the instrument: housing, mechanism, and control geometry, built as separate solid bodies wherever a part needs to move later.</span>
+        <span class="desc">Movable parts isolated and exported as STL.</span>
       </div>
       <div class="pipeline-node">
         <span class="stage">Stage 02</span>
         <span class="tool">Maya</span>
-        <span class="desc">Retopology and UV layout on the exported geometry, preparing clean meshes for texturing and real-time performance.</span>
+        <span class="desc">Parts prepped and optimized for UE4.</span>
       </div>
       <div class="pipeline-node">
         <span class="stage">Stage 03</span>
-        <span class="tool">FBX Export</span>
-        <span class="desc">Export with preserved part hierarchy and pivot points, so movable components stay addressable once inside the engine.</span>
+        <span class="tool">Substance Painter</span>
+        <span class="desc">FBX from Maya, painted with PBR materials.</span>
       </div>
       <div class="pipeline-node">
         <span class="stage">Stage 04</span>
         <span class="tool">Unreal / VR</span>
-        <span class="desc">Assembly into Unreal Engine 4, wired for interaction, and deployed to a VR training environment.</span>
+        <span class="desc">Assembled, wired, and deployed for VR.</span>
       </div>
     </div>
   </section>
