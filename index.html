@@ -21,20 +21,18 @@
       <span class="value">CAD / Mechanical Design</span>
     </div>
     <nav class="tb-nav">
-      <a href="#pipeline">Pipeline</a>
+      <a href="#home">Home</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="home">
 
-  <!-- HERO -->
   <section class="hero wrap">
     <div class="hero-grid">
       <div>
-        <p class="eyebrow">Portfolio</p>
         <h1>Lab instruments,<br>built for a<br><span class="accent">VR-ready</span> pipeline.</h1>
         <p class="lede">Mechatronics engineer designing lab machines and instruments in SolidWorks, prepped through Maya and Substance Painter, and deployed as interactive VR training environments in Unreal Engine 4.</p>
         <div class="hero-actions">
@@ -52,128 +50,86 @@
     </div>
   </section>
 
-  <!-- PIPELINE -->
   <section id="pipeline" class="wrap">
     <div class="sec-head">
       <h2>Design Pipeline</h2>
+      <span class="head-tag" aria-hidden="true"></span>
     </div>
-    <p class="pipeline-intro">Movable parts are decided in SolidWorks, not bolted on later — every stage after that just carries that decision forward.</p>
+    <p class="pipeline-intro">Parts are modeled in SolidWorks, optimized for real-time use in Maya, textured in Substance Painter, and assembled into VR training scenes in Unreal Engine.</p>
     <div class="pipeline">
-      <div class="pipeline-node">
-        <span class="stage">Stage 01</span>
+      <div class="pipeline-node primary">
+        <span class="stage">01</span>
         <span class="tool">SolidWorks</span>
         <span class="desc">Movable parts isolated and exported as STL.</span>
+        <span class="cap-label">CAD</span>
       </div>
       <div class="pipeline-node">
-        <span class="stage">Stage 02</span>
+        <span class="stage">02</span>
         <span class="tool">Maya</span>
         <span class="desc">Parts prepped and optimized for UE4.</span>
+        <span class="cap-label">Maya</span>
       </div>
       <div class="pipeline-node">
-        <span class="stage">Stage 03</span>
+        <span class="stage">03</span>
         <span class="tool">Substance Painter</span>
         <span class="desc">FBX from Maya, painted with PBR materials.</span>
+        <span class="cap-label">Substance Painter</span>
       </div>
       <div class="pipeline-node">
-        <span class="stage">Stage 04</span>
+        <span class="stage">04</span>
         <span class="tool">Unreal / VR</span>
         <span class="desc">Assembled, wired, and deployed for VR.</span>
+        <span class="cap-label">Unreal Engine 4</span>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="wrap">
     <div class="sec-head">
-      <h2>Selected Projects</h2>
+      <h2>Projects</h2>
+      <a class="head-link" href="#projects">View all projects</a>
     </div>
 
-    <!-- PROJECT SHEET 01 -->
-    <article class="sheet reveal">
-      <div class="sheet-head">
-        <span class="sheet-status">Deployed</span>
-      </div>
-      <div class="sheet-body">
-        <div class="sheet-media">
-          <div class="media-slot"><div class="viewer-box project-viewer" id="viewer-project-1"><span class="viewer-status">Loading model…</span></div></div>
-          <div class="media-caption">FIG. 01 — Assembly, 7 solid bodies</div>
+    <div class="project-grid">
+      <a class="project-card" href="project-compact-ripple-tank.html">
+        <div class="project-card-media media-one">
+          <span class="project-badge">01</span>
+          <span class="project-plus">＋</span>
         </div>
-        <div class="sheet-content">
-          <h3>Compact Ripple Tank</h3>
-          <p class="role">Design → VR asset</p>
-          <p><strong>Problem.</strong> Instrument housing with a control panel and wave-generating mechanism, with a lid that needed to move independently in VR.</p>
-          <p><strong>Built.</strong> Modeled as 7 solid bodies in SolidWorks, lid exported separately as STL, prepped in Maya, painted in Substance Painter, and assembled/lit in Unreal for VR.</p>
-          <div class="tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Maya</span>
-            <span class="tag">Substance Painter</span>
-            <span class="tag">Unreal / VR</span>
-          </div>
-        </div>
-      </div>
-    </article>
+        <div class="project-card-tag">Mechanical Design / 3D / VR</div>
+        <h3>Compact Ripple Tank</h3>
+        <p>Design → VR asset</p>
+      </a>
 
-    <!-- PROJECT SHEET 02 -->
-    <article class="sheet reveal">
-      <div class="sheet-head">
-        <span class="sheet-status">Deployed</span>
-      </div>
-      <div class="sheet-body">
-        <div class="sheet-media">
-          <div class="media-slot"><img src="assets/basic-photogates-system/01-solidworks-exploded.png" alt="SolidWorks exploded view of the track, cart, pulley and photogate assembly"></div>
-          <div class="media-caption">FIG. 01 — Exploded assembly, 22 solid bodies</div>
-          <div class="media-slot"><div class="viewer-box project-viewer" id="viewer-project-2"><span class="viewer-status">Loading model…</span></div></div>
-          <div class="media-caption">FIG. 02 — Lit in Unreal, parts placed for VR interaction</div>
+      <a class="project-card" href="project-gearbox-assembly.html">
+        <div class="project-card-media media-two">
+          <span class="project-badge">02</span>
+          <span class="project-plus">＋</span>
         </div>
-        <div class="sheet-content">
-          <h3>Basic System &amp; Photogates System</h3>
-          <p class="role">Design → VR asset</p>
-          <p><strong>Problem.</strong> A physics track for kinematics/dynamics experiments — students reposition the photogates, end stops, and pulley for each run; the VR version needed that same freedom.</p>
-          <p><strong>Built.</strong> Modeled as a 22-body assembly — track, cart, pulley, photogate, fence, rod, elastic bumper, and end stop all kept independent, exported as STL, prepped in Maya, painted in Substance Painter, and staged in Unreal as separately placeable parts.</p>
-          <div class="tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Maya</span>
-            <span class="tag">Substance Painter</span>
-            <span class="tag">Unreal / VR</span>
-          </div>
-        </div>
-      </div>
-    </article>
+        <div class="project-card-tag">CAD / Mechanical Design</div>
+        <h3>Basic System &amp; Photogates System</h3>
+        <p>Design → VR asset</p>
+      </a>
 
-    <!-- PROJECT SHEET 03 — placeholder, awaiting details -->
-    <article class="sheet reveal">
-      <div class="sheet-head">
-        <span class="sheet-status">In Review</span>
-      </div>
-      <div class="sheet-body">
-        <div class="sheet-media">
-          <div class="media-slot"><div class="viewer-box project-viewer" id="viewer-project-3"><span class="viewer-status">Loading model…</span></div></div>
-          <div class="media-caption">FIG. 01 — [caption]</div>
+      <a class="project-card" href="project-material-study.html">
+        <div class="project-card-media media-three">
+          <span class="project-badge">03</span>
+          <span class="project-plus">＋</span>
         </div>
-        <div class="sheet-content">
-          <h3>[Project Name]</h3>
-          <p class="role">Design → VR asset</p>
-          <p><strong>Problem.</strong> [What the instrument does and what needed to move.]</p>
-          <p><strong>Built.</strong> [Modeling + pipeline summary, one or two sentences.]</p>
-          <div class="tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">Maya</span>
-            <span class="tag">Substance Painter</span>
-            <span class="tag">Unreal / VR</span>
-          </div>
-        </div>
-      </div>
-    </article>
+        <div class="project-card-tag">Texturing / Unreal</div>
+        <h3>Interactive Lab Instrument</h3>
+        <p>Design → VR asset</p>
+      </a>
+    </div>
   </section>
 
-  <!-- CONTACT / SIGN-OFF -->
   <section id="contact" class="wrap">
-    <div class="dim-rule"><span>Sign-off</span></div>
+    <div class="dim-rule" aria-hidden="true"></div>
     <div class="signoff">
       <div class="signoff-grid">
         <div>
-          <h2>Let's build something that has to fit, move, and hold up.</h2>
-          <p>Open to CAD, mechanical design, and VR asset pipeline roles.</p>
+          <h2>Precision-engineered parts, built to perform.</h2>
+          <p>Available for CAD engineering, mechanical design, and real-time asset pipeline positions</p>
           <div class="hero-actions">
             <a class="btn primary" href="mailto:sica2296@gmail.com">Email me</a>
             <a class="btn ghost" href="https://www.linkedin.com/in/sc2296/" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -192,7 +148,9 @@
 
 <footer>
   <div class="wrap footer-row">
+    <span class="scroll-mark" aria-hidden="true"></span>
     <span>© 2026 SOFIA CALDERON — PORTFOLIO</span>
+    <span class="footer-plus">＋</span>
   </div>
 </footer>
 
@@ -204,7 +162,6 @@
   items.forEach(el => io.observe(el));
 </script>
 
-<!-- 3D STL VIEWER (Three.js) -->
 <script type="importmap">
 {
   "imports": {
@@ -295,7 +252,6 @@
     });
   }
 
-  // Featured model in the hero and project galleries
   initSTLViewer({
     containerId: 'viewer-hero',
     stlPath: 'assets/models/featured-model.stl',

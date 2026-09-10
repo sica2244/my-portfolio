@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gearbox Assembly — Sofia Calderon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="project-page" id="top">
+  <header class="site-header">
+    <div class="shell header-inner">
+      <div class="brand">Sofia Calderon</div>
+      <div class="meta-cell">CAD / Mechanical Design</div>
+      <nav class="main-nav">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell project-page-shell">
+    <div class="project-intro">
+      <a class="back-link" href="index.html">← Back to portfolio</a>
+      <span class="project-code">PRJ-02</span>
+    </div>
+
+    <div class="project-header">
+      <div>
+        <h1>Basic System &amp; Photogates System</h1>
+      </div>
+    </div>
+
+    <div class="project-layout">
+      <div class="project-visual">
+        <div class="viewer-box" id="project-viewer-2">
+          <span class="viewer-status">Loading model…</span>
+        </div>
+      </div>
+
+      <aside class="project-panel">
+        <h3>Project overview</h3>
+        <div class="project-detail">
+          <div class="project-detail-row"><span>Problem</span><strong>A physics track for kinematics/dynamics experiments — students reposition the photogates, end stops, and pulley for each run; the VR version needed that same freedom.</strong></div>
+          <div class="project-detail-row"><span>Built</span><strong>Modeled as a 22-body assembly, with each part kept independent and exported as a separate STL for VR placement and interaction.</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="process-section">
+      <div class="process-head">
+        <h2>Process</h2>
+      </div>
+
+      <div class="process-cards">
+        <article class="process-card">
+          <div class="thumb"><img src="assets/basic-photogates-system/01-solidworks-exploded.png" alt="Exploded gearbox assembly"></div>
+          <strong>01 — SolidWorks</strong>
+          <p>SolidWorks is used to model and identify the movable parts, then export them separately as STL files so each component keeps its own functional logic in VR.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="thumb"><img src="assets/basic-photogates-system/02-maya-parts.png" alt="Part groups in modeling environment"></div>
+          <strong>02 — Maya</strong>
+          <p>The individual parts are prepared in Maya to optimize their geometry and export them in a file format ready for final presentation.</p>
+        </article>
+
+        <article class="process-card">
+          <div class="thumb"><img src="assets/basic-photogates-system/03-unreal-scene.png" alt="Final render or scene"></div>
+          <strong>03 — Substance + Unreal</strong>
+          <p>The FBX parts are painted in Substance Painter and then imported with their textures into Unreal Engine for final assembly and interaction.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div class="footer-brand">Sofia Calderon</div>
+    <div class="footer-meta">CAD / Mechanical Design</div>
+    <nav class="bottom-nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </footer>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+
+    function initSTLViewer(containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      const statusEl = container.querySelector('.viewer-status');
+      const width = container.clientWidth || 500;
+      const height = container.clientHeight || 400;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 5000);
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(width, height);
+      container.appendChild(renderer.domElement);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.08;
+      controls.enablePan = false;
+      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.3);
+      keyLight.position.set(1.5, 1.2, 1.0);
+      scene.add(keyLight);
+
+      const loader = new STLLoader();
+      loader.load('assets/models/featured-model.stl', (geometry) => {
+        geometry.center();
+        geometry.computeVertexNormals();
+        geometry.computeBoundingBox();
+
+        const size = new THREE.Vector3();
+        geometry.boundingBox.getSize(size);
+        const maxDim = Math.max(size.x, size.y, size.z) || 1;
+        const scale = 2.3 / maxDim;
+
+        const material = new THREE.MeshStandardMaterial({
+          color: 0x2e4756,
+          metalness: 0.15,
+          roughness: 0.6
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.scale.setScalar(scale);
+        scene.add(mesh);
+
+        camera.position.set(2.6, 2.0, 2.8);
+        controls.target.set(0, 0, 0);
+        controls.update();
+
+        if (statusEl) statusEl.style.display = 'none';
+      }, undefined, (err) => {
+        console.error('STL load error:', err);
+        if (statusEl) statusEl.textContent = 'Model could not load.';
+      });
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      }; animate();
+
+      window.addEventListener('resize', () => {
+        const w = container.clientWidth || 500;
+        const h = container.clientHeight || 400;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      });
+    }
+
+    initSTLViewer('project-viewer-2');
+  </script>
+</body>
+</html>

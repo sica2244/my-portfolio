@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sofia Calderon — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="titleblock">
+  <div class="titleblock-inner">
+    <div class="tb-cell tb-name">
+      <span class="label">Name</span>
+      <span class="value">Sofia Calderon</span>
+    </div>
+    <div class="tb-cell">
+      <span class="label">Discipline</span>
+      <span class="value">CAD / Mechanical Design</span>
+    </div>
+    <nav class="tb-nav">
+      <a href="#pipeline">Pipeline</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="tb-switch">
+      <a class="active" href="portfolio-engineering.html">Engineering</a>
+      <a href="portfolio-visualization.html">Visualization</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Engineering Portfolio — Sheet 01</p>
+        <h1>Mechanical design for lab systems<br>built for a<br><span class="accent">VR-ready workflow.</span></h1>
+        <p class="lede">Mechatronic engineer with experience in CAD modeling, system design, and asset preparation for simulation and training environments. Previous freelance work has been completed through PNX Labs.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-figure">
+        <span class="tick tl">FIG. 01</span>
+        <div class="frame">CAD feature-tree / isometric assembly view<br>[replace with your SolidWorks screenshot]</div>
+        <span class="tick br">SCALE 1:1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEC STRIP -->
+  <section class="specs">
+    <div class="wrap">
+      <div class="specs-grid">
+        <div class="spec"><div class="num">[X]</div><div class="lbl">Years in CAD</div></div>
+        <div class="spec"><div class="num">[X]</div><div class="lbl">Assemblies Documented</div></div>
+        <div class="spec"><div class="num">[X]</div><div class="lbl">Parts Modeled</div></div>
+        <div class="spec"><div class="num">[X]</div><div class="lbl">Export Formats Handled</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section id="pipeline" class="wrap">
+    <div class="sec-head">
+      <h2>Design Pipeline</h2>
+      <span class="sheet-tag">STAGE 01 — DESIGN OF RECORD</span>
+    </div>
+    <p class="pipeline-intro">Movable parts are decided in SolidWorks, not bolted on later — every stage after that just carries that decision forward.</p>
+    <div class="pipeline">
+      <div class="pipeline-node primary">
+        <span class="stage">Stage 01</span>
+        <span class="tool">SolidWorks</span>
+        <span class="desc">Movable parts isolated and exported as STL.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 02</span>
+        <span class="tool">Maya</span>
+        <span class="desc">Parts prepped and optimized for UE4.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 03</span>
+        <span class="tool">Substance Painter</span>
+        <span class="desc">FBX from Maya, painted with PBR materials.</span>
+      </div>
+      <div class="pipeline-node">
+        <span class="stage">Stage 04</span>
+        <span class="tool">Unreal / VR</span>
+        <span class="desc">Assembled, wired, and deployed for VR.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="wrap">
+    <div class="sec-head">
+      <h2>Selected Projects</h2>
+      <span class="sheet-tag">SHEET SHOWS DESIGN + MODELING SCOPE</span>
+    </div>
+
+    <!-- PROJECT SHEET 01 -->
+    <article class="sheet reveal">
+      <div class="sheet-head">
+        <span class="sheet-status">Export Validated</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-media">
+          <div class="media-slot">Full assembly, isometric view<br>[SolidWorks screenshot]</div>
+          <div class="media-caption">FIG. 01 — Assembly overview, 7 solid bodies</div>
+          <div class="media-slot">Feature tree / exploded view<br>[SolidWorks screenshot]</div>
+          <div class="media-caption">FIG. 02 — Feature tree: 19 boss-extrudes, 5 cut-extrudes, separated lid</div>
+        </div>
+        <div class="sheet-content">
+          <h3>Compact Ripple Tank</h3>
+          <p class="role">Design & CAD modeling</p>
+          <p><strong>Problem.</strong> Design an instrument housing with a control panel, a wave-generating mechanism, and a lid that needed to move independently once imported into a real-time engine — meaning the CAD structure itself had to anticipate the downstream pipeline.</p>
+          <p><strong>Approach.</strong> Modeled as a fully parametric assembly: base housing, control panel details, and mechanism built from driven sketches so dimensions could be revised without rebuilding geometry. Movable components (lid, panel switches) were kept as separate solid bodies and named clearly to survive the FBX export and stay addressable in Unreal.</p>
+          <p><strong>Validation.</strong> Checked mass properties and interference between separated bodies before export; verified STEP and FBX exports preserved part hierarchy and pivot points needed for the animated lid.</p>
+          <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Parametric Modeling</span>
+            <span class="tag">Multi-Body Assembly</span>
+            <span class="tag">STEP / FBX Export</span>
+          </div>
+          <table class="rev">
+            <caption>Iteration log</caption>
+            <thead>
+              <tr><th>Rev</th><th>Change</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>Single-body concept, all features merged</td><td class="result">Hard to edit; lid couldn't separate for export</td></tr>
+              <tr><td>B</td><td>Split into 7 solid bodies, renamed for pipeline clarity</td><td class="result">Clean FBX hierarchy, addressable parts in engine</td></tr>
+              <tr><td>C</td><td>Reorganized feature tree, consolidated redundant cuts</td><td class="result">Faster rebuild time, easier downstream edits</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <!-- PROJECT SHEET 02 -->
+    <article class="sheet reveal">
+      <div class="sheet-head">
+        <span class="sheet-no">DWG NO. PRJ-02 — Basic System &amp; Photogates System</span>
+        <span class="sheet-status">Export Validated</span>
+      </div>
+      <div class="sheet-body">
+        <div class="sheet-media">
+          <div class="media-slot"><img src="assets/basic-photogates-system/01-solidworks-exploded.png" alt="SolidWorks exploded view of the track, cart, pulley and photogate assembly"></div>
+          <div class="media-caption">FIG. 01 — Exploded assembly, 22 solid bodies, SolidWorks</div>
+          <div class="media-slot"><img src="assets/basic-photogates-system/02-maya-parts.png" alt="Maya outliner and separated parts for the track system"></div>
+          <div class="media-caption">FIG. 02 — Parts broken out in Maya: TrackMovablePart, PulleyWheel, Photogate, Fence, Rod, CartMass, Car, ElasticBumper</div>
+        </div>
+        <div class="sheet-content">
+          <h3>Basic System &amp; Photogates System</h3>
+          <p class="role">Design & CAD modeling</p>
+          <p><strong>Problem.</strong> A physics lab track for kinematics and dynamics experiments — velocity/acceleration runs, collisions, and Atwood-machine-style pulley setups. In the physical lab, students reposition the photogates, end stops, and pulley along the track for each experiment; a VR training version needed that same freedom, not a single fused mesh of the whole rig.</p>
+          <p><strong>Approach.</strong> Modeled as a 22-body assembly: the track itself as one continuous rail, with the cart, cart mass, pulley assembly, photogate, fence, rod, elastic bumper, and track end stop all kept as independent solid bodies constrained to slide along it. Each part was named to match its function (TrackMovablePart, TrackEndStop, PulleyWheel, PulleyBody, Photogate, Fence, Rod, CartMass, Car, ElasticBumper) so the intent survived the export, not just the geometry.</p>
+          <p><strong>Validation.</strong> Confirmed the Maya outliner preserved every named part as a separate object after FBX import, then checked the Unreal scene to verify each movable component could be placed and repositioned independently along the track — the same reconfiguration a student would do at a physical bench.</p>
+          <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">22-Body Assembly</span>
+            <span class="tag">Configurable Geometry</span>
+            <span class="tag">FBX Export</span>
+          </div>
+          <table class="rev">
+            <caption>Iteration log</caption>
+            <thead>
+              <tr><th>Rev</th><th>Change</th><th>Result</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>A</td><td>[Fill in — e.g. first pass with fewer separated bodies]</td><td class="result">[Fill in — what broke or didn't reconfigure correctly]</td></tr>
+              <tr><td>B</td><td>[Fill in — e.g. split pulley, photogate, end stop into independent bodies]</td><td class="result">[Fill in — result once separated]</td></tr>
+              <tr><td>C</td><td>[Fill in — naming/export cleanup pass]</td><td class="result">[Fill in — final validated state]</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- CONTACT / SIGN-OFF -->
+  <section id="contact" class="wrap">
+    <div class="dim-rule"><span>Sign-off</span></div>
+    <div class="signoff">
+      <div class="signoff-grid">
+        <div>
+          <h2>Available for engineering and design roles.</h2>
+          <p>I am a mechatronic engineer from ITESM, with experience in CAD, design iteration, and cross-disciplinary system work. My freelance projects have been completed through PNX Labs.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:sica2296@gmail.com">Email me</a>
+            <a class="btn ghost" href="mailto:sica2296@gmail.com">sica2296@gmail.com</a>
+          </div>
+        </div>
+        <table class="approval-table">
+          <tr><td class="k">Name</td><td>Sofia Calderon</td></tr>
+          <tr><td class="k">Location</td><td>Mexico / Remote</td></tr>
+          <tr><td class="k">Email</td><td><a href="mailto:sica2296@gmail.com">sica2296@gmail.com</a></td></tr>
+          <tr><td class="k">Background</td><td>Mechatronic Engineer, ITESM</td></tr>
+          <tr><td class="k">Freelance work</td><td>PNX Labs</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <span>© 2026 SOFIA CALDERON — ENGINEERING PORTFOLIO</span>
+    <span>REV C — SEE ALSO: VISUALIZATION VERSION</span>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12});
+  items.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
