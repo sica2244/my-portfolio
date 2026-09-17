@@ -29,7 +29,7 @@
 
     <div class="project-header">
       <div>
-        <h1>Interactive Lab Instrument</h1>
+        <h1>DynaPrep MDSF</h1>
       </div>
     </div>
 
@@ -43,8 +43,8 @@
       <aside class="project-panel">
         <h3>Project overview</h3>
         <div class="project-detail">
-          <div class="project-detail-row"><span>Problem</span><strong>Instrument housing with a control panel and motion-based parts requiring a clear, interactive layout for VR demonstration.</strong></div>
-          <div class="project-detail-row"><span>Built</span><strong>Modeled in SolidWorks, then exported as separate STL components for clean preparation and interaction in the VR scene.</strong></div>
+          <div class="project-detail-row"><span>Problem</span><strong>Industrial pipe machining assembly with multiple mechanical components and complex geometry that needed to be accurately reproduced in 3D.</strong></div>
+          <div class="project-detail-row"><span>Built</span><strong>Modeled as a 22-part movable assembly, with individual components prepared for interaction and animation. Parts were exported in STL and FBX formats for use in 3D and VR environments.</strong></div>
         </div>
       </aside>
     </div>
@@ -124,7 +124,7 @@
       scene.add(keyLight);
 
       const loader = new STLLoader();
-      loader.load('assets/models/featured-model.stl', (geometry) => {
+      loader.load('assets/models/DynaPrepFull.STL', (geometry) => {
         geometry.center();
         geometry.computeVertexNormals();
         geometry.computeBoundingBox();
