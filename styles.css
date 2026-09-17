@@ -382,6 +382,15 @@ section { padding: 62px 0 76px; }
   pointer-events: none;
 }
 
+.viewer-box.viewer-error {
+  background: linear-gradient(135deg, rgba(28, 33, 32, 0.9), rgba(62, 75, 80, 0.9));
+}
+
+.viewer-box.viewer-error .viewer-status {
+  color: rgba(255,255,255,0.9);
+  background: rgba(15,19,22,0.35);
+}
+
 .tick {
   position: absolute;
   z-index: 2;
