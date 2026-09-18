@@ -216,7 +216,7 @@
         const scale = 2.2 / maxDim;
 
         const material = new THREE.MeshStandardMaterial({
-          color: accentColor || 0x2e4756,
+          color: accentColor || 0xcfcfcf,
           metalness: 0.15,
           roughness: 0.55
         });
@@ -255,14 +255,14 @@
   initSTLViewer({
     containerId: 'viewer-hero',
     stlPath: 'assets/models/featured-model.stl',
-    accentColor: 0x2e4756
+    accentColor: 0xcfcfcf
   });
 
   ['viewer-project-1', 'viewer-project-2', 'viewer-project-3'].forEach((id) => {
     initSTLViewer({
       containerId: id,
       stlPath: 'assets/models/featured-model.stl',
-      accentColor: 0x2e4756
+      accentColor: 0xcfcfcf
     });
   });
 </script>
